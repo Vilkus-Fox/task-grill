@@ -1,0 +1,22 @@
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+# Node / build artifacts
+node_modules/
+dist/
+build/
+.cache/
+coverage/
+# Local workspace and editor state
+.DS_Store
+.idea/
+.vscode/
+*.log
+.env
+.env.*
+!.env.example
+# Generated standalone skill packages
+skill.zip
