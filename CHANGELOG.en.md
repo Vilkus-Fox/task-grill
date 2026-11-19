@@ -2,6 +2,12 @@
 
 [Русский](CHANGELOG.ru.md) · [Documentation](README.en.md)
 
+## 1.6.1-preview · November 19, 2026 (addendum)
+
+- Added standalone `antigravity-task-grill` for Google Antigravity, preserving read-only boundaries and platform-specific installation guidance.
+- Expanded the documentation and structural tests to cover three environments.
+- Antigravity live-model pilot is **NOT RUN**; the authored behavioral scenario count remains 57.
+
 ## 1.6.1-preview · November 18, 2026
 
 - Preserve the owner's chosen executor and environment; never silently assign Codex.

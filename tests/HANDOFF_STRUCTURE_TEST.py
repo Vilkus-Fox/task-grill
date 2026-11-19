@@ -14,7 +14,7 @@ for phrase in ['approved_decisions', 'verified_evidence', 'material_open_gates',
     assert phrase.lower() in handoff.lower(), phrase
 for n in range(38, 58):
     assert ('## T%d.' % n) in cases, n
-for slug in ['task-grill', 'codex-task-grill']:
+for slug in ['task-grill', 'codex-task-grill', 'antigravity-task-grill']:
     skill = (root / 'skills' / slug / 'SKILL.md').read_text(encoding='utf-8')
     assert 'COLLABORATION_HANDOFF.md' in skill
     assert 'SKILL_PORTFOLIO.md' in skill
