@@ -7,7 +7,7 @@ source = root / 'shared' / 'references'
 required = ['RELIABILITY_PROTOCOL.md', 'CODEBASE_DISCOVERY.md', 'SKILL_PORTFOLIO.md', 'COLLABORATION_HANDOFF.md', 'SCENARIO_TESTS.md']
 for x in required:
     assert (source / x).is_file(), f'Canonical source missing {x}'
-for slug in ['task-grill', 'codex-task-grill']:
+for slug in ['task-grill', 'codex-task-grill', 'antigravity-task-grill']:
     skill = root / 'skills' / slug
     content = (skill / 'SKILL.md').read_text(encoding='utf-8')
     assert content.startswith('---\nname: ' + slug + '\n')
@@ -18,7 +18,8 @@ for slug in ['task-grill', 'codex-task-grill']:
     cases = (source / 'SCENARIO_TESTS.md').read_text(encoding='utf-8')
     assert all(('T' + str(i) + '.') in cases for i in range(1, 58))
     assert (skill / 'references' / 'UPSTREAM_LICENSE.txt').is_file()
-    assert 'display_name: "Прожарка задачи' in (skill / 'agents' / 'openai.yaml').read_text(encoding='utf-8')
+    if slug != 'antigravity-task-grill':
+        assert 'display_name: Прожарка задачи' in (skill / 'agents' / 'openai.yaml').read_text(encoding='utf-8')
     for f in source.iterdir():
         if f.is_file():
             assert (skill / 'references' / f.name).read_bytes() == f.read_bytes(), f'Out of sync: {slug}/{f.name}'
